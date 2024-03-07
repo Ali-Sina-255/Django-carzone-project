@@ -127,7 +127,7 @@
                 <div class="slick-slide-item">
                     <div class="car-box-3">
                         <div class="car-thumbnail">
-                            <a href="car-details.html" class="car-img">
+                            <a href="{% url 'car:car-details' car.id %}" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
                                     <span class="del"></span>
@@ -179,10 +179,10 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="car-details.html">{{car.cart_title}}</a>
+                                <a href="{% url 'car:car-details' car.id %}">{{car.cart_title}}</a>
                             </h1>
                             <div class="location">
-                                <a href="car-details.html">
+                                <a href="{% url 'car:car-details' car.id %}">
                                     <i class="flaticon-pin"></i>{{car.state}}, {{car.city}},
                                 </a>
                             </div>
@@ -225,7 +225,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="car-box">
                     <div class="car-thumbnail">
-                        <a href="car-details.html" class="car-img">
+                        <a href="{% url 'car:car-details' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
                             <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car">
                             <div class="facilities-list clearfix">
@@ -280,10 +280,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="car-details.html">{{car.description | safe}}</a>
+                            <a href="{% url 'car:car-details' car.id %}">{{car.description | safe}}</a>
                         </h1>
                         <div class="location">
-                            <a href="car-details.html">
+                            <a href="car-details">
                                 <i class="flaticon-pin"></i>{{car.state}}. {{car.city}},
                             </a>
                         </div>
@@ -334,7 +334,7 @@
                             </div>
                         </div>
                         <div class="details">
-                            <h4><a href="team-detail.html">{{team.first_name}}</a></h4>
+                            <h4><a href="">{{team.first_name}}</a></h4>
                             <h5>{{team.designation}}</h5>
                         </div>
                     </div>
