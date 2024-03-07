@@ -85,26 +85,26 @@ class Car(models.Model):
         ('5', '5'),
         ('6', '6'),
     )
-    cart_title = models.CharField(max_length=255)
+    car_title = models.CharField(max_length=255)
     state = models.CharField(max_length=255, choices=STATE_CHOICES)
     city = models.CharField(max_length=200)
     color = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
-    year = models.IntegerField(('year',), choices=year_choice)
+    year = models.IntegerField(('year'), choices=year_choice)
     condition = models.CharField(max_length=200)
     description = RichTextField()
     price = models.IntegerField()
-    car_photo = models.ImageField(upload_to='photos/%Y/%/%m/%d/', blank=True)
-    car_photo_1 = models.ImageField(upload_to='photos/%Y/%/%m/%d/', blank=True)
-    car_photo_2 = models.ImageField(upload_to='photos/%Y/%/%m/%d/', blank=True)
-    car_photo_3 = models.ImageField(upload_to='photos/%Y/%/%m/%d/', blank=True)
-    car_photo_4 = models.ImageField(upload_to='photos/%Y/%/%m/%d/', blank=True)
+    car_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    car_photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    car_photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    car_photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    car_photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     features = models.CharField(choices=FEATURES_CHOICES, max_length=255)
     body_style = models.CharField(max_length=100)
     engine = models.CharField(max_length=100)
     transmission = models.CharField(max_length=100)
     interior = models.CharField(max_length=100)
-    mils = models.IntegerField()
+    miles = models.IntegerField()
     doors = models.CharField(max_length=100, choices=DOOR_CHOICES)
     passengers = models.CharField(max_length=100)
     vin_no = models.CharField(max_length=100)
@@ -115,5 +115,6 @@ class Car(models.Model):
     created_at = models.DateField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.cart_title
-    
+        return self.car_title
+
+
