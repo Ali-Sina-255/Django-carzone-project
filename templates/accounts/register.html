@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %} | Register{% endblock %}
+
 {% block content %}
 
 
@@ -30,7 +32,8 @@
                     </div>
                     <h3>Create an account</h3>
                     {% include 'includes/messages.html' %}
-                    <form action="{% url 'account:register' %}" method="get">
+                    
+                    <form action="{% url 'account:register' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group form-box">
                             <input type="text" name="firstname" class="input-text" placeholder="First Name" required>
