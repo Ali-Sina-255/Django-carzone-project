@@ -37,7 +37,7 @@
         </div>
         <!-- Search box 3 start -->
         <div class="search-box-4 sb-8">
-            <form action="{% url 'car:search' %}" method="">
+            <form action="{% url 'search' %}" method="">
                 <div class="form-group">
                     <input type="text" name="keyword" placeholder="Search by name" class="form-control">
                 </div>
@@ -125,7 +125,7 @@
                 <div class="slick-slide-item">
                     <div class="car-box-3">
                         <div class="car-thumbnail">
-                            <a href="{% url 'car:car-details' car.id %}" class="car-img">
+                            <a href="{% url 'car-details' car.id %}" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
                                     <span class="del"></span>
@@ -177,10 +177,10 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="{% url 'car:car-details' car.id %}">{{car.cart_title}}</a>
+                                <a href="{% url 'car-details' car.id %}">{{car.cart_title}}</a>
                             </h1>
                             <div class="location">
-                                <a href="{% url 'car:car-details' car.id %}">
+                                <a href="{% url 'car-details' car.id %}">
                                     <i class="flaticon-pin"></i>{{car.state}}, {{car.city}},
                                 </a>
                             </div>
@@ -223,7 +223,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="car-box">
                     <div class="car-thumbnail">
-                        <a href="{% url 'car:car-details' car.id %}" class="car-img">
+                        <a href="{% url 'car-details' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
                             <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car">
                             <div class="facilities-list clearfix">
@@ -278,7 +278,7 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{% url 'car:car-details' car.id %}">{{car.description | safe}}</a>
+                            <a href="{% url 'car-details' car.id %}">{{car.description | safe}}</a>
                         </h1>
                         <div class="location">
                             <a href="car-details">

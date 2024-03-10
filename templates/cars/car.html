@@ -70,10 +70,10 @@
                             </div>
                             <div class="detail">
                                 <h1 class="title">
-                                    <a href="{% url 'car:car-details' car.id %}">{{car.car_title}}</a>
+                                    <a href="{% url 'car-details' car.id %}">{{car.car_title}}</a>
                                 </h1>
                                 <div class="location">
-                                    <a href="{% url 'car:car-details' car.id %}">
+                                    <a href="{% url 'car-details' car.id %}">
                                         <i class="flaticon-pin"></i>{{car.state}}. {{car.city}}
                                     </a>
                                 </div>
@@ -138,7 +138,7 @@
                     <!-- Advanced search start -->
                     <div class="widget advanced-search2">
                         <h3 class="sidebar-title">Search your desire car</h3>
-                        <form action="{% url 'car:search' %}" method="">
+                        <form action="{% url 'search' %}" method="">
                             <div class="form-group">
                                 <input type="text" name="keyword" placeholder="Search by name" class="form-control">
                             </div>
