@@ -22,7 +22,11 @@
             <h1>Contact <span>Us</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="main-title text-center">
+           {% include 'includes/messages.html' %}
+        </div>
+        <form action="{% url 'pages:contact' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-lg-7">
                     <div class="row">

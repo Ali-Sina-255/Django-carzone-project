@@ -21,7 +21,7 @@
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents">
-                <form action="{% url 'car:search' %}" method="GET">
+                <form action="{% url 'search' %}" method="GET">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
@@ -154,10 +154,10 @@
                             </div>
                             <div class="detail">
                                 <h1 class="title">
-                                    <a href="{% url 'car:car-details' car.id %}">{{car.car_title}}</a>
+                                    <a href="{% url 'car-details' car.id %}">{{car.car_title}}</a>
                                 </h1>
                                 <div class="location">
-                                    <a href="{% url 'car:car-details' car.id %}">
+                                    <a href="{% url 'car-details' car.id %}">
                                         <i class="flaticon-pin"></i>{{car.state}}. {{car.city}}
                                     </a>
                                 </div>

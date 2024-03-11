@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from contact.models import Contact
+from django.contrib.auth.decorators import login_required
 
 
 def login(request, *args, **kwargs):
@@ -63,5 +65,11 @@ def register(request, *args, **kwargs):
     return render(request, 'accounts/register.html')
 
 
+@login_required(login_url='account:login')
 def dashboard(request, *args, **kwargs):
-    return render(request, 'accounts/dashboard.html')
+    user_inquriy = Contact.objects.order_by(
+        'created_at').filter(user_id=request.user.id)
+    context = {
+        'user_inquriy': user_inquriy,
+    }
+    return render(request, 'accounts/dashboard.html', context)

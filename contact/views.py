@@ -25,7 +25,7 @@ def inquiry(request, *args, **kwargs):
             has_contacted = Contact.objects.all().filter(car_id=car_id, user_id=user_id)
             if has_contacted:
                 messages.error(request, 'you already make an enquriy about this car.Please wait until we get back to you.')
-                return redirect('cars')
+                return redirect('pages:home')
         
         admin_info = User.objects.get(is_superuser=True)
         admin_email = admin_info.email
@@ -35,8 +35,9 @@ def inquiry(request, *args, **kwargs):
             "Have a new inquiry for the car " + car_title + ".please login to admin panel for more info.",
             "alisiansultani52@gmail.com",
             [admin_email],
-            fail_silently=False
+            fail_silently = False,
         )
+        
         contact_inventoru = Contact(car_id=car_id, car_title=car_title, user_id=user_id, first_name=first_name,
                                     last_name=last_name, customer_need=customer_need, city=city, state=state, email=email, phone=phone, message=message)
         contact_inventoru.save()
